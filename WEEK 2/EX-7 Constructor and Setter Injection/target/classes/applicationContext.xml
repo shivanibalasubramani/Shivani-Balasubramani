@@ -1,0 +1,17 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Enable component scanning -->
+    <context:component-scan base-package="com.library"/>
+
+    <!-- Define beans with constructor injection -->
+    <bean id="bookService" class="com.library.service.BookService">
+        <constructor-arg ref="bookRepository"/>
+    </bean>
+
+    <!-- Define beans with setter injection -->
+    <bean id="bookRepository" class="com.library.repository.BookRepository"/>
+
+</beans>
